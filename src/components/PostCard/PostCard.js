@@ -10,6 +10,7 @@ import {
     Box
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import Images from '../../Images/Images';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
       transform: 'rotate(180deg)',
     },
     avatar: {
-      backgroundColor: "blue",
+      backgroundColor: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`,
     },
   }));
 
@@ -52,30 +53,17 @@ const PostCard = (props) => {
     const randDate = getRandomDate(Date('01/01/2013'), Date('01/06/2020'));
     const {post} = props;
     post.date = randDate;
-
-    // const [userInfo, setUserInfo] = useState({});
-    // const url = "https://randomuser.me/api/";
-    // useEffect(() => {
-    //     fetch(url, {mode: 'no-cors'})
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         const user = data.results;
-    //         setUserInfo(user);
-    //     });
-    // }, []);
-
-    // post.userName = `${userInfo.title} ${userInfo.first} ${userInfo.last}`;
-    // post.userImg = userInfo.picture.thumbnail;
-
+    const avatarStyle = {backgroundColor: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`}
     
     const to = `/post/${post.id}`;
+    const img = Images[post.id % 15];
 
     return (
         <Card className={classes.root}>
             <CardHeader
                 avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        R
+                    <Avatar aria-label="recipe" style={avatarStyle}>
+                        <img src={img} alt="" style={{width: "100%"}} />
                     </Avatar>
                 }
                 

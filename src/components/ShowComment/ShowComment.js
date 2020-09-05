@@ -6,6 +6,7 @@ import {
     Avatar,
     makeStyles
 } from '@material-ui/core';
+import Images from '../../Images/Images';
 
 const useStyles = makeStyles((theme) => ({
     media: {
@@ -30,12 +31,13 @@ const useStyles = makeStyles((theme) => ({
 const ShowComment = (props) => {
     const classes = useStyles();
     const comment = props.comment;
+    const img = Images[Math.floor(Math.random() * 15)];
     return (
         <>
             <CardHeader
                 avatar={
                     <Avatar aria-label="recipe" className={classes.avatar}>
-                        R
+                        <img src={img} alt="" style={{width: "100%"}} />
                     </Avatar>
                 }
                 

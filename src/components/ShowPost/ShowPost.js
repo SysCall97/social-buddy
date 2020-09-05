@@ -18,7 +18,7 @@ const ShowPost = () => {
     return (
         <div className="below-header">
             <PostCard post={post} showButton={false} key={1} />
-            <h2>Comments:</h2>
+            <h2 style={{borderBottom:"1px solid lightgray", width: "25vh"}}>Comments</h2>
             <Comments postId={postId} key={2} />
         </div>
     );
