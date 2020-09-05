@@ -14,7 +14,7 @@ const Header = () => {
     const classes = useStyles();
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" style={{position: "fixed", top: "0"}}>
             <Toolbar>
                 <Typography variant="h6" className={classes.title}>
                     Social Buddy

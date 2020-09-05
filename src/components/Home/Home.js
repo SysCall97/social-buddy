@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import PostCard from '../PostCard/PostCard';
 
 const Home = () => {
+    const [posts, setPosts] = useState([]);
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+
+    useEffect(() => {
+        fetch(url)
+        .then(response => response.json())
+        .then(data => setPosts(data));
+    }, []);
+
+
     return (
-        <div>
-            <h1>This is home</h1>
+        <div className="below-header">
+            {
+                posts.map(post => <PostCard post={post} showButton={true} key={post.id}/>)
+            }
         </div>
     );
 };
