@@ -4,7 +4,9 @@ import View from './components/View/View';
 
 function App() {
   return (
-    <View />
+    <div className="app">
+      <View />
+    </div>
   );
 }
 
