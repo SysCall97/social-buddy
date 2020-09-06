@@ -44,8 +44,8 @@ const PostCard = (props) => {
 
     function getRandomDate() {
         const year = Math.floor(Math.random() * (2020 - 2012 + 1)) + 2012;
-        const date = Math.floor(Math.random() * (28 - 1 + 1)) + 1;
-        const month = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+        const date = Math.floor(Math.random() * 28) + 1;
+        const month = Math.floor(Math.random() * 11) + 1;
         return  `${months[month]} ${date}, ${year}`;
     }
 
